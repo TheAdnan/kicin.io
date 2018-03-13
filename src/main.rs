@@ -10,12 +10,12 @@ fn index() -> &'static str {
 }
 
 #[get("/about")]
-fn about() -> &'static str {
+fn about() -> String {
 
-    "This is an about page"
+    "This is an about page".to_string()
 
 }
 
 fn main() {
-    rocket::ignite().mount("/", routes![index, about])ll.launch();
+    rocket::ignite().mount("/", routes![index, about]).launch();
 }
